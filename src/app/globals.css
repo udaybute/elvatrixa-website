@@ -1,0 +1,81 @@
+/* src/app/globals.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+/* Google Fonts — Elvatrixa typography system */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Lato:wght@300;400;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* Backgrounds */
+  --bg-0: #080a0e;
+  --bg-1: #0d1117;
+  --bg-2: #161b22;
+  --bg-3: #1c2128;
+  --bg-4: #21262d;
+  /* Accent colours */
+  --gold: #c9a84c;
+  --gold-light: #e8c96a;
+  --gold-pale: #f5e199;
+  --gold-dim: rgba(201, 168, 76, 0.12);
+  --gold-border: rgba(201, 168, 76, 0.22);
+  --teal: #1db8a0;
+  --teal-dim: rgba(29, 184, 160, 0.1);
+  /* Text */
+  --text-1: #f0f6fc;
+  --text-2: #c9d1d9;
+  --text-3: #8b949e;
+  /* Borders */
+  --border-gold: rgba(201, 168, 76, 0.22);
+  --border-subtle: rgba(255, 255, 255, 0.06);
+  /* Spacing scale */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 16px;
+  --s4: 24px;
+  --s5: 40px;
+  --s6: 80px;
+  --s7: 120px;
+  /* Fonts */
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-mono: "DM Mono", "Courier New", monospace;
+  --font-body: "Lato", "Helvetica Neue", sans-serif;
+  --font-code: "JetBrains Mono", "Courier New", monospace;
+}
+/* Base resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body {
+  background-color: var(--bg-1);
+  color: var(--text-1);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+/* Selection highlight */
+::selection {
+  background: var(--gold-dim);
+  color: var(--gold-light);
+}
+/* Scrollbar — dark, gold thumb */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-1);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gold-border);
+  borderradius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
