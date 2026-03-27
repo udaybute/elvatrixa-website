@@ -1,0 +1,9 @@
+{
+  "name": "Elvatrixa",
+  "short_name": "Elvatrixa",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060810",
+  "theme_color": "#D4AF37",
+  "icons": []
+}

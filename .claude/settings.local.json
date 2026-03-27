@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"c:/Ub/elvatrixa/src/app/\\(marketing\\)/privacy/\")",
+      "Bash(ls \"c:/Ub/elvatrixa/src/app/\\(marketing\\)/terms/\")",
+      "Bash(ls \"c:/Ub/elvatrixa/src/app/\\(marketing\\)/cookies/\")",
+      "Bash(git -C c:/Ub/elvatrixa show HEAD:src/components/sections/Hero.tsx)",
+      "Bash(git -C c:/Ub/elvatrixa log --oneline -5)",
+      "Bash(git -C c:/Ub/elvatrixa diff HEAD -- src/components/sections/Hero.tsx)"
+    ]
+  }
+}
