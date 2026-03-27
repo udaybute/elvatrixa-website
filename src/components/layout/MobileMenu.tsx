@@ -218,7 +218,7 @@ export default function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 >
                   {serviceNavItems.map(service => {
                     const IconComponent = (
-                      LucideIcons as Record<string, React.ComponentType<{ size?: number; className?: string }>>
+                      LucideIcons as unknown as Record<string, React.ComponentType<{ size?: number; className?: string }>>
                     )[service.icon] ?? LucideIcons.Settings2
 
                     return (

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/set-state-in-effect */
 'use client'
 
 import { useState, useEffect, useRef, useCallback } from 'react'
@@ -102,7 +103,7 @@ function MobileMenu({open,onClose,pathname}:{open:boolean;onClose:()=>void;pathn
           <ul style={{display:'flex',flexDirection:'column',gap:'2px',listStyle:'none',padding:0,margin:0}}>
             {NAV_LINKS.map(link=>{
               const active=isActive(link.href)
-              if(link.hasMega){
+              if ('hasMega' in link && link.hasMega){
                 return (
                   <li key={link.href}>
                     <button onClick={()=>setServicesOpen(v=>!v)} style={{width:'100%',display:'flex',alignItems:'center',justifyContent:'space-between',padding:'12px 16px',borderRadius:'8px',border:'none',cursor:'pointer',fontFamily:'var(--font-body)',fontWeight:500,fontSize:'15px',background:servicesOpen||isActive('/services')?'var(--gold-dim)':'transparent',color:servicesOpen||isActive('/services')?'var(--gold)':'var(--text-2)',transition:'background 0.15s,color 0.15s'}}>
@@ -197,7 +198,7 @@ export default function Navbar() {
             <nav className="hidden md:flex" aria-label="Main navigation" style={{alignItems:'center',gap:'4px'}}>
               {NAV_LINKS.map(link=>{
                 const active=isActive(link.href)
-                if(link.hasMega){
+                if ('hasMega' in link && link.hasMega){
                   return (
                     <div key={link.href} style={{position:'relative'}} onMouseEnter={openMega} onMouseLeave={closeMega}>
                       <button aria-haspopup="true" aria-expanded={megaOpen} onClick={()=>setMegaOpen(v=>!v)}

@@ -16,9 +16,7 @@
 
 import { createClient }   from '@sanity/client'
 import imageUrlBuilder    from '@sanity/image-url'
-import type { SanityImageSource } from '@sanity/image-url/lib/types/types'
-
-
+import type { SanityImageSource } from '@sanity/image-url'
 /* ── 1. PROJECT CONFIG ───────────────────────────────────────── */
 
 const projectId  = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID ?? ''
