@@ -36,7 +36,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Weeks from brief to production',value: '9'       },
     ],
     tech:     ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe', 'Vercel'],
-    imageUrl: '/images/p1.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80',
     clientQuote:
       'Elvatrixa replaced a tool we had been paying £4k a month for, ' +
       'built exactly around how our team actually works.',
@@ -63,7 +63,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Payback period on investment', value: '6wk'  },
     ],
     tech:     ['Python', 'OpenAI', 'n8n', 'PostgreSQL', 'AWS Lambda'],
-    imageUrl: '/images/p2.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1677442135703-1787eea5ce01?auto=format&fit=crop&w=1200&q=80',
     clientQuote:
       'Our Monday morning reports now arrive in inboxes before anyone is ' +
       'even at their desk. That used to take two people all of Friday.',
@@ -90,7 +90,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Average order value',          value: '+12%'        },
     ],
     tech:     ['Shopify', 'Liquid', 'Klaviyo', 'Hotjar', 'Google Analytics'],
-    imageUrl: '/images/p3.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1200&q=80',
     clientQuote:
       'Same traffic, nearly double the revenue. The ROI on this project ' +
       'paid back in the first three weeks after launch.',
@@ -117,7 +117,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Decision cycle improvement',         value: '4× faster' },
     ],
     tech:     ['React', 'PostgreSQL', 'dbt', 'Stripe API', 'Vercel'],
-    imageUrl: '/images/p4.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
   },
 
   /* ── 5. Performance Optimisation ─────────────────────────── */
@@ -140,7 +140,7 @@ export const CASE_STUDIES: CaseStudy[] = [
       { label: 'Organic traffic after 8 weeks',value: '+23%'      },
     ],
     tech:     ['Next.js', 'Vercel', 'Cloudflare', 'WebP', 'Lighthouse CI'],
-    imageUrl: '/images/p5.jpg',
+    imageUrl: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80',
   },
 ]
 

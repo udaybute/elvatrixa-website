@@ -16,7 +16,7 @@ import { PROCESS_STEPS } from '@/data'
 */
 export default function ProcessSteps() {
   return (
-    <section className="section-pad" style={{ background: 'var(--bg-2)' }}>
+    <section className="section-pad" style={{ background: 'var(--bg-page)' }}>
       <div className="section-container">
 
         {/* ── Heading ── */}

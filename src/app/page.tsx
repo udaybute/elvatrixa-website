@@ -21,10 +21,12 @@
 import type { Metadata } from 'next'
 import { buildPageMetadata, organizationSchema } from '@/lib/seo'
 
-import Hero          from '@/components/sections/Hero'
+import { ElvatrixaHero } from '@/components/ui/hero-section-nexus'
 import StatsBar      from '@/components/sections/StatsBar'
 import ServicesGrid  from '@/components/sections/ServicesGrid'
 import FeaturedWork  from '@/components/sections/FeaturedWork'
+import IdealClient   from '@/components/sections/IdealClient'
+import PricingTeaser from '@/components/sections/PricingTeaser'
 import WhyElvatrixa  from '@/components/sections/WhyElvatrixa'
 import ProcessSteps  from '@/components/sections/ProcessSteps'
 import Testimonials  from '@/components/sections/Testimonials'
@@ -72,10 +74,9 @@ export default function HomePage() {
       />
 
       {/* 1 ── Hero */}
-      <Hero />
+      <ElvatrixaHero />
 
-      {/* 2 ── Stats Bar */}
-      <StatsBar />
+    
 
       {/* 3 ── Services Grid */}
       <ServicesGrid />
@@ -83,7 +84,13 @@ export default function HomePage() {
       {/* 4 ── Featured Work */}
       <FeaturedWork />
 
-      {/* 5 ── Why Elvatrixa */}
+      {/* 5 ── Who We Work With (Ideal Client) */}
+      <IdealClient />
+
+      {/* 6 ── Pricing Teaser */}
+      <PricingTeaser />
+
+      {/* 7 ── Why Elvatrixa */}
       <WhyElvatrixa />
 
       {/* 6 ── Process Steps */}

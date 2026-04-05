@@ -29,7 +29,7 @@ const Star = ({ filled }: { filled: boolean }) => (
 */
 export default function Testimonials() {
   return (
-    <section className="section-pad" style={{ background: 'var(--bg-1)' }}>
+    <section className="section-pad" style={{ background: 'var(--bg-section)' }}>
       <div className="section-container">
 
         {/* ── Heading ── */}
@@ -54,9 +54,10 @@ export default function Testimonials() {
               <article
                 className="relative flex flex-col p-7 rounded-xl overflow-hidden h-full"
                 style={{
-                  background: 'var(--bg-3)',
-                  border:     '1px solid var(--border-subtle)',
-                  borderTop:  '1px solid var(--gold-border)',
+                  background: '#FFFFFF',
+                  border:     '1px solid #E5E7EB',
+                  borderTop:  '3px solid var(--gold)',
+                  boxShadow:  '0 2px 12px rgba(10,22,40,0.06)',
                 }}
               >
                 {/* ── Decorative giant quote mark ── */}
@@ -81,7 +82,7 @@ export default function Testimonials() {
                   {Array.from({ length: 5 }).map((_, si) => (
                     <span
                       key={si}
-                      style={{ color: si < t.rating ? 'var(--gold)' : 'var(--text-4)' }}
+                      style={{ color: si < t.rating ? 'var(--gold)' : '#D1D5DB' }}
                     >
                       <Star filled={si < t.rating} />
                     </span>
@@ -91,7 +92,7 @@ export default function Testimonials() {
                 {/* ── Quote ── */}
                 <blockquote
                   className="font-body text-sm leading-relaxed flex-1 mb-6 relative z-10"
-                  style={{ color: 'var(--text-2)' }}
+                  style={{ color: '#374151' }}
                 >
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
@@ -99,7 +100,7 @@ export default function Testimonials() {
                 {/* ── Divider ── */}
                 <div
                   className="w-full h-px mb-5"
-                  style={{ background: 'var(--border-subtle)' }}
+                  style={{ background: '#E5E7EB' }}
                 />
 
                 {/* ── Client info ── */}
@@ -124,13 +125,13 @@ export default function Testimonials() {
                   <div>
                     <p
                       className="font-body font-bold text-sm leading-tight"
-                      style={{ color: 'var(--text-1)' }}
+                      style={{ color: 'var(--text-primary)' }}
                     >
                       {t.name}
                     </p>
                     <p
                       className="font-mono text-[10px] tracking-wide mt-0.5"
-                      style={{ color: 'var(--text-4)', letterSpacing: '0.06em' }}
+                      style={{ color: '#6B7280', letterSpacing: '0.06em' }}
                     >
                       {t.role} · {t.company} · {t.country}
                     </p>
@@ -146,7 +147,7 @@ export default function Testimonials() {
         <ScrollReveal className="mt-12 text-center">
           <p
             className="font-mono text-[11px] tracking-widest uppercase"
-            style={{ color: 'var(--text-4)' }}
+            style={{ color: '#9CA3AF' }}
           >
             Serving clients in the US, UK, Australia, Canada & beyond
           </p>

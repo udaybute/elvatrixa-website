@@ -63,9 +63,9 @@ function ResultsCard() {
     <div
       className="relative rounded-2xl overflow-hidden"
       style={{
-        background:  'var(--bg-3)',
-        border:      '1px solid var(--border-subtle)',
-        boxShadow:   '0 32px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(201,168,76,0.05)',
+        background:  '#FFFFFF',
+        border:      '1px solid #E5E7EB',
+        boxShadow:   '0 8px 40px rgba(10,22,40,0.10), 0 0 0 1px rgba(201,168,76,0.07)',
       }}
     >
       {/* Top gold accent line */}
@@ -80,7 +80,7 @@ function ResultsCard() {
       {/* Card header */}
       <div
         className="flex items-center justify-between px-5 py-4"
-        style={{ borderBottom: '1px solid var(--border-subtle)' }}
+        style={{ borderBottom: '1px solid #E5E7EB' }}
       >
         <div className="flex items-center gap-2">
           <span
@@ -89,7 +89,7 @@ function ResultsCard() {
           />
           <span
             className="font-mono text-[10px] tracking-widest uppercase"
-            style={{ color: 'var(--text-4)' }}
+            style={{ color: '#9CA3AF' }}
           >
             Recent Result
           </span>
@@ -101,7 +101,7 @@ function ResultsCard() {
       <div className="px-5 pt-5 pb-4">
         <p
           className="font-mono text-[10px] tracking-widest uppercase mb-2"
-          style={{ color: 'var(--text-4)' }}
+          style={{ color: '#9CA3AF' }}
         >
           Conversion Rate
         </p>
@@ -115,7 +115,7 @@ function ResultsCard() {
           <div className="mb-1.5">
             <span
               className="font-mono text-[10px] tracking-wider uppercase block"
-              style={{ color: 'var(--text-4)' }}
+              style={{ color: '#9CA3AF' }}
             >
               from 1.8%
             </span>
@@ -129,7 +129,7 @@ function ResultsCard() {
         </div>
         <p
           className="font-body text-xs"
-          style={{ color: 'var(--text-4)' }}
+          style={{ color: '#9CA3AF' }}
         >
           Alden &amp; Roe · UK Fashion Brand
         </p>
@@ -138,25 +138,25 @@ function ResultsCard() {
       {/* Supporting metrics */}
       <div
         className="grid grid-cols-3"
-        style={{ borderTop: '1px solid var(--border-subtle)' }}
+        style={{ borderTop: '1px solid #E5E7EB' }}
       >
         {metrics.map((m, i) => (
           <div
             key={m.label}
             className="flex flex-col items-center justify-center py-4 px-2 text-center"
             style={{
-              borderRight: i < 2 ? '1px solid var(--border-subtle)' : 'none',
+              borderRight: i < 2 ? '1px solid #E5E7EB' : 'none',
             }}
           >
             <span
               className="font-display font-bold leading-none mb-1"
-              style={{ fontSize: '20px', color: 'var(--text-1)' }}
+              style={{ fontSize: '20px', color: 'var(--text-primary)' }}
             >
               {m.value}
             </span>
             <span
               className="font-mono text-[9px] tracking-wider uppercase leading-tight"
-              style={{ color: 'var(--text-4)' }}
+              style={{ color: '#9CA3AF' }}
             >
               {m.label}
             </span>
@@ -167,7 +167,7 @@ function ResultsCard() {
       {/* Footer CTA */}
       <div
         className="px-5 py-4"
-        style={{ borderTop: '1px solid var(--border-subtle)' }}
+        style={{ borderTop: '1px solid #E5E7EB' }}
       >
         <Link
           href="/work/ecommerce-conversion-rebuild"
@@ -175,7 +175,7 @@ function ResultsCard() {
         >
           <span
             className="font-body text-xs font-bold uppercase tracking-wider"
-            style={{ color: 'var(--text-3)' }}
+            style={{ color: '#6B7280' }}
           >
             Alden &amp; Roe Case Study
           </span>
@@ -220,7 +220,7 @@ export default function Hero() {
   return (
     <section
       className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden"
-      style={{ background: 'var(--bg-0)' }}
+      style={{ background: 'var(--bg-page)' }}
       aria-label="Elvatrixa hero"
     >
 
@@ -234,41 +234,30 @@ export default function Hero() {
         }}
       />
 
-      {/* ── Background: main radial glow (top-center) ── */}
+      {/* ── Background: soft gold glow (top-center) ── */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 90% 60% at 50% -5%, rgba(201,168,76,0.16) 0%, transparent 65%)',
+            'radial-gradient(ellipse 90% 60% at 50% -5%, rgba(201,168,76,0.07) 0%, transparent 65%)',
         }}
       />
 
-      {/* ── Background: secondary glow (bottom-right, offset) ── */}
+      {/* ── Background: blue tint gradient ── */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
-          background:
-            'radial-gradient(ellipse 55% 45% at 85% 95%, rgba(29,184,160,0.04) 0%, transparent 60%)',
+          background: 'linear-gradient(180deg, transparent 0%, rgba(241,243,249,0.4) 100%)',
         }}
       />
 
-      {/* ── Background: dot grid ── */}
+      {/* ── Background: dot grid (very subtle on light) ── */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 dot-grid-bg"
-        style={{ opacity: 0.30 }}
-      />
-
-      {/* ── Background: bottom fade ── */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 left-0 right-0 h-48"
-        style={{
-          background:
-            'linear-gradient(to top, var(--bg-0) 0%, transparent 100%)',
-        }}
+        style={{ opacity: 0.03 }}
       />
 
       {/* ── Content ── */}
@@ -287,7 +276,7 @@ export default function Hero() {
                 style={{ background: 'linear-gradient(90deg, var(--gold), transparent)' }}
                 aria-hidden="true"
               />
-              <span className="section-label">Digital Innovation Studio</span>
+              <span className="section-label">SaaS &amp; AI Development Partner</span>
 
               {/* Availability indicator */}
               <span
@@ -298,14 +287,14 @@ export default function Hero() {
                 }}
               >
                 <span
-                  className="block w-1.5 h-1.5 rounded-full animate-pulse-gold"
-                  style={{ background: 'var(--teal)' }}
+                  className="block w-1.5 h-1.5 rounded-full animate-pulse"
+                  style={{ background: '#22c55e' }}
                 />
                 <span
                   className="font-mono text-[10px] tracking-widest uppercase"
                   style={{ color: 'var(--teal)' }}
                 >
-                  Taking projects
+                  2 Project Slots Available This Month
                 </span>
               </span>
             </div>
@@ -321,27 +310,30 @@ export default function Hero() {
             >
               <span
                 className="block"
-                style={{ color: 'var(--text-1)' }}
+                style={{ color: 'var(--text-primary)' }}
               >
-                We Engineer
+                AI-Powered Websites
+              </span>
+              <span
+                className="block"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                That Drive
               </span>
               <span className="block text-gold-gradient">
-                Digital
-              </span>
-              <span className="block text-gold-gradient">
-                Excellence.
+                40% More Conversions
               </span>
             </h1>
 
             {/* Sub-headline */}
             <p
               className="animate-fade-up delay-150 font-body leading-relaxed mb-10 max-w-xl"
-              style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: 'var(--text-3)' }}
+              style={{ fontSize: 'clamp(16px, 2vw, 19px)', color: 'var(--text-secondary)' }}
             >
-              World-class SaaS platforms, AI automation, and high-converting
-              digital products — built for ambitious businesses in the{' '}
-              <span style={{ color: 'var(--text-2)', fontWeight: 600 }}>US, UK,</span>
-              {' '}and beyond. Every project is fixed-price and outcome-driven.
+              We help Series A SaaS startups launch conversion-optimized,
+              AI-integrated websites{' '}
+              <span style={{ color: 'var(--text-primary)', fontWeight: 600 }}>50% faster than US agencies</span>
+              {' '}— at half the cost.
             </p>
 
             {/* CTAs */}
@@ -352,45 +344,27 @@ export default function Hero() {
                   <ArrowRight />
                 </span>
               </Link>
-              <Link href="/work" className="btn-secondary">
-                View Our Work
+              <Link
+                href="/contact?type=audit"
+                className="btn-secondary"
+              >
+                Get Free Website Audit →
               </Link>
             </div>
 
             {/* Trust signals */}
             <div className="animate-fade-up delay-300 flex flex-wrap items-center gap-x-5 gap-y-2.5">
               {[
-                { icon: <ShieldCheck />, label: 'GDPR Compliant' },
                 { icon: <TagIcon />,    label: 'Fixed-Price Projects' },
-                { icon: <ClockIcon />,  label: 'Reply Within 4 Hours' },
+                { icon: <ShieldCheck />, label: 'US Timezone Overlap' },
+                { icon: <ClockIcon />,  label: '30-Day Guarantee' },
+                { icon: <ShieldCheck />, label: 'Sub-2s Load Time' },
               ].map(item => (
                 <span key={item.label} className="flex items-center gap-1.5">
-                  <span style={{ color: 'var(--text-4)' }}>{item.icon}</span>
+                  <span style={{ color: 'var(--gold)' }}>{item.icon}</span>
                   <span
                     className="font-mono text-[10px] tracking-wider uppercase"
-                    style={{ color: 'var(--text-4)' }}
-                  >
-                    {item.label}
-                  </span>
-                </span>
-              ))}
-
-              <span
-                className="hidden md:block w-px h-3.5"
-                style={{ background: 'var(--border-subtle)' }}
-                aria-hidden="true"
-              />
-
-              {/* Geo badges */}
-              {[
-                { flag: '🇺🇸', label: 'US Clients' },
-                { flag: '🇬🇧', label: 'UK Clients' },
-              ].map(item => (
-                <span key={item.label} className="flex items-center gap-1.5">
-                  <span className="text-sm leading-none" aria-hidden="true">{item.flag}</span>
-                  <span
-                    className="font-mono text-[10px] tracking-wider uppercase"
-                    style={{ color: 'var(--text-4)' }}
+                    style={{ color: 'var(--text-muted)' }}
                   >
                     {item.label}
                   </span>
@@ -412,7 +386,7 @@ export default function Hero() {
         {/* ── Stats strip ── */}
         <div
           className="animate-fade-up delay-450 mt-20 pt-8 grid grid-cols-2 md:grid-cols-4"
-          style={{ borderTop: '1px solid var(--border-subtle)' }}
+          style={{ borderTop: '1px solid var(--border-light)' }}
         >
           {stats.map((stat, i) => (
             <div key={stat.label} className="relative flex flex-col gap-1.5 px-6 first:pl-0">
@@ -421,7 +395,7 @@ export default function Hero() {
                 <span
                   aria-hidden="true"
                   className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 h-10 w-px"
-                  style={{ background: 'var(--border-subtle)' }}
+                  style={{ background: 'var(--border-light)' }}
                 />
               )}
               <div
@@ -437,7 +411,7 @@ export default function Hero() {
               </div>
               <span
                 className="font-body text-xs tracking-wide"
-                style={{ color: 'var(--text-4)' }}
+                style={{ color: 'var(--text-muted)' }}
               >
                 {stat.label}
               </span>
@@ -455,7 +429,7 @@ export default function Hero() {
       >
         <span
           className="font-mono text-[9px] tracking-widest uppercase"
-          style={{ color: 'var(--text-4)' }}
+          style={{ color: 'var(--text-muted)' }}
         >
           Scroll
         </span>
@@ -463,7 +437,7 @@ export default function Hero() {
           <svg
             width="16" height="16" viewBox="0 0 16 16" fill="none"
             stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"
-            style={{ color: 'var(--text-4)' }}
+            style={{ color: 'var(--text-muted)' }}
           >
             <path d="M4 6l4 4 4-4" />
           </svg>

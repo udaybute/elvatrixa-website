@@ -26,7 +26,7 @@ export default function AnimatedCounter({
   duration = 1800,
   className,
 }: AnimatedCounterProps) {
-  const [display, setDisplay] = useState(0)
+  const [display, setDisplay] = useState(value) /* Start at actual value — no zero flash on SSR */
   const hasRun       = useRef(false)        /* ref not state — avoids re-render loop */
   const ref          = useRef<HTMLSpanElement>(null)
   const rafRef       = useRef<number | null>(null)

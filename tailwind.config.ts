@@ -19,35 +19,63 @@ const config: Config = {
 
       /* ── COLOURS ─────────────────────────────────────────── */
       colors: {
+        /* ── Light premium backgrounds ────────────────────────── */
+        bg: {
+          page:     '#FFFFFF',
+          section:  '#F8F9FC',
+          card:     '#FFFFFF',
+          elevated: '#F1F3F9',
+        },
+
+        /* ── Navy — navbar, headings, dark sections ───────────── */
         navy: {
-          DEFAULT: '#0D1117',
+          DEFAULT: '#0A1628',
           0:       '#060810',
           2:       '#111520',
           3:       '#161B22',
           4:       '#1C2128',
           5:       '#21262D',
+          soft:    '#0D1E3A',
+          text:    '#1A2B4A',
         },
+
+        /* ── Gold accents ─────────────────────────────────────── */
         gold: {
           DEFAULT: '#C9A84C',
           light:   '#E8C96A',
-          pale:    '#F5E4A0',
+          pale:    '#FDF6E3',
           dim:     'rgba(201,168,76,0.10)',
-          border:  'rgba(201,168,76,0.20)',
+          border:  'rgba(201,168,76,0.25)',
           glow:    'rgba(201,168,76,0.08)',
         },
+
+        /* ── Teal secondary ───────────────────────────────────── */
         teal: {
           DEFAULT: '#1DB8A0',
-          light:   '#2DD4BC',
+          light:   '#E8F8F5',
+          bright:  '#2DD4BC',
           dim:     'rgba(29,184,160,0.10)',
           border:  'rgba(29,184,160,0.25)',
         },
+
+        /* ── Text hierarchy (light mode) ──────────────────────── */
+        'text-primary':   '#0A1628',
+        'text-secondary': '#374151',
+        'text-muted':     '#6B7280',
+        'text-light':     '#9CA3AF',
+
+        /* ── Legacy dark-theme text tokens (kept for existing components) */
         'text-1': '#F0F6FC',
         'text-2': '#C9D1D9',
         'text-3': '#8B949E',
         'text-4': '#484F58',
+
+        /* ── Borders ──────────────────────────────────────────── */
+        'border-light':  '#E5E7EB',
+        'border-medium-light': '#D1D5DB',
         'border-subtle': 'rgba(255,255,255,0.055)',
         'border-medium': 'rgba(255,255,255,0.10)',
-        'border-gold':   'rgba(201,168,76,0.20)',
+        'border-gold':   'rgba(201,168,76,0.25)',
       },
 
       /* ── FONT FAMILIES ───────────────────────────────────── */

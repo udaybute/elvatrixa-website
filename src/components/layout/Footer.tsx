@@ -7,20 +7,12 @@
 ================================================================ */
 
 import Link            from 'next/link'
+import Image           from 'next/image'
 import { GoldDivider } from '@/components/ui/GoldLine'
 import type { FooterColumn } from '@/types'
 
 
 /* ── INLINE ICONS ────────────────────────────────────────────── */
-
-function IconZap() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none"
-      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-      <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
-    </svg>
-  )
-}
 
 function IconMail({ size = 13 }: { size?: number }) {
   return (
@@ -156,25 +148,17 @@ export default function Footer() {
             {/* Logo */}
             <Link
               href="/"
-              className="flex items-center gap-2.5 group w-fit"
+              className="w-fit group"
               aria-label="Elvatrixa homepage"
             >
-              <div
-                className="flex items-center justify-center w-8 h-8 rounded-sm transition-all duration-normal group-hover:bg-gold"
-                style={{
-                  background: 'var(--gold-dim)',
-                  border:     '1px solid var(--gold-border)',
-                  color:      'var(--gold)',
-                }}
-              >
-                <IconZap />
-              </div>
-              <span
-                className="font-display font-bold text-xl transition-colors duration-normal group-hover:text-gold-light"
-                style={{ color: 'var(--text-1)' }}
-              >
-                Elvatrixa
-              </span>
+              <Image
+                src="/logo-full.png"
+                alt="Elvatrixa"
+                width={150}
+                height={62}
+                style={{ display: 'block' }}
+                className="transition-opacity duration-normal group-hover:opacity-80"
+              />
             </Link>
 
             {/* Tagline */}

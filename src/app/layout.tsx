@@ -108,8 +108,8 @@ export default function RootLayout({
 
       <body
         className={[
-          /* Background and text from design tokens */
-          'bg-navy text-text-1',
+          /* Light premium background with dark text */
+          'bg-bg-page text-text-secondary',
           /* Body font stack */
           'font-body',
           /* Smooth subpixel rendering */
