@@ -18,7 +18,6 @@ import {
   type Transition,
   type VariantLabels,
   type Target,
-  type AnimationControls,
   type TargetAndTransition,
   type Variants,
 } from "framer-motion";
@@ -52,7 +51,7 @@ interface RotatingTextProps
   texts: string[];
   transition?: Transition;
   initial?: boolean | Target | VariantLabels;
-  animate?: boolean | VariantLabels | AnimationControls | TargetAndTransition;
+  animate?: boolean | VariantLabels | TargetAndTransition;
   exit?: Target | VariantLabels;
   animatePresenceMode?: "sync" | "wait";
   animatePresenceInitial?: boolean;
@@ -264,11 +263,12 @@ RotatingText.displayName = "RotatingText";
 /* ═══════════════════════════════════════════════════════════════
    SHINY TEXT BADGE
 ═══════════════════════════════════════════════════════════════ */
-const ShinyBadge: React.FC<{ text: string; className?: string }> = ({
+const ShinyBadge: React.FC<{ text: string; className?: string; style?: React.CSSProperties }> = ({
   text,
   className = "",
+  style,
 }) => (
-  <span className={cn("relative overflow-hidden inline-block", className)}>
+  <span className={cn("relative overflow-hidden inline-block", className)} style={style}>
     {text}
     <span
       style={{
