@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp___21st-dev_magic__21st_magic_component_inspiration",
+      "Bash(npx tsc:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(git push:*)",
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); const icons = ['SiVuedotjs','SiSpring','SiDotnet','SiMysql','SiKubernetes','SiGraphql','SiJava']; icons.forEach\\(n => console.log\\(n, !!si[n]\\)\\)\")"
+    ]
+  }
+}

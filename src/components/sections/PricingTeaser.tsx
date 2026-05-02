@@ -3,9 +3,7 @@
    File: src/components/sections/PricingTeaser.tsx
 
    Server Component — no 'use client'.
-   Layout: header → trust bar → 3 full-feature cards → WaaS stripe → CTAs.
-   Dark navy (#0A1628) section — alternates with light IdealClient above.
-   All hover effects via Tailwind group-hover — no JS.
+   Indian market pricing in INR — lead generation optimised.
 ================================================================ */
 
 import Link         from 'next/link'
@@ -35,73 +33,102 @@ const Zap = () => (
   </svg>
 )
 
+const Star = () => (
+  <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+  </svg>
+)
+
+const Rupee = () => (
+  <svg width="13" height="13" viewBox="0 0 24 24" fill="none"
+    stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+    <path d="M6 3h12M6 8h12M15 21L6 8M10 8a4 4 0 0 0 0 8"/>
+  </svg>
+)
+
 
 /* ── Data ────────────────────────────────────────────────────── */
 
 const TIERS = [
   {
-    name:     'Essentials',
-    price:    'From $8K',
-    timeline: '3–5 weeks · Fixed price',
-    tagline:  'Launch your digital presence fast and professionally.',
-    featured: false,
-    badge:    null as string | null,
+    name:      'Starter',
+    price:     '₹15,000',
+    suffix:    'onwards',
+    timeline:  '7–10 days · Fixed price',
+    tagline:   'Perfect for small businesses, local shops & personal brands ready to go online.',
+    featured:  false,
+    badge:     null as string | null,
+    highlight: 'Best for Startups',
     features: [
-      'Up to 8 pages or screens',
+      'Up to 5 pages (Home, About, Services, Gallery, Contact)',
       'Mobile-first responsive design',
-      'Brand integration & design system',
-      '2 rounds of revisions',
-      'Basic SEO & performance setup',
+      'WhatsApp & call button integration',
+      'Google Maps embed',
+      'Basic SEO setup',
+      '1 round of revisions',
+      '15-day post-launch support',
+    ],
+    cta:  'Get Started Today',
+    href: '/contact',
+  },
+  {
+    name:      'Business',
+    price:     '₹35,000',
+    suffix:    'onwards',
+    timeline:  '2–3 weeks · 2 milestones',
+    tagline:   'High-converting website built to generate enquiries and grow your customer base.',
+    featured:  true,
+    badge:     'Most Popular' as string | null,
+    highlight: 'Best for Growing Businesses',
+    features: [
+      'Up to 12 pages or screens',
+      'Custom UI/UX design',
+      'Lead capture forms & CRM integration',
+      'WhatsApp chat widget',
+      'Google Analytics & Search Console',
+      'On-page SEO + Core Web Vitals',
+      '2 milestone payment schedule',
       '30-day post-launch support',
     ],
-    cta:     'Start a Project',
-    href:    '/contact',
+    cta:  'Get a Free Quote',
+    href: '/contact',
   },
   {
-    name:     'Growth',
-    price:    'From $18K',
-    timeline: '6–10 weeks · 3 milestones',
-    tagline:  'Performance-focused build for companies ready to scale.',
-    featured: true,
-    badge:    'Most Popular' as string | null,
+    name:      'Premium',
+    price:     '₹75,000',
+    suffix:    'onwards',
+    timeline:  '4–6 weeks · Custom scope',
+    tagline:   'Full-featured platform for established brands demanding performance and scale.',
+    featured:  false,
+    badge:     null as string | null,
+    highlight: 'Best for Enterprises',
     features: [
-      'Up to 20 pages or app screens',
-      'Custom UI/UX design included',
-      'CMS or database integration',
-      'API & third-party integrations',
-      'A/B testing & analytics setup',
-      'SEO foundation + Core Web Vitals',
-      '3 milestone payment schedule',
-      '60-day post-launch support',
-    ],
-    cta:     'Get a Fixed Quote',
-    href:    '/contact',
-  },
-  {
-    name:     'Enterprise',
-    price:    'From $55K',
-    timeline: '12–20 weeks · Custom scope',
-    tagline:  'Full platform build with custom architecture and SLA.',
-    featured: false,
-    badge:    null as string | null,
-    features: [
-      'Full SaaS or e-commerce platform',
-      'Custom backend architecture',
-      'Multi-tenant / role-based access',
-      'AI & automation integrations',
+      'Unlimited pages + web application',
+      'Custom backend / database',
+      'E-commerce or booking system',
+      'Payment gateway integration',
+      'Admin dashboard & CMS',
       'Dedicated project manager',
       'Quarterly strategy reviews',
-      'SLA + uptime guarantee',
+      '60-day post-launch support',
     ],
-    cta:     'Discuss Your Project',
-    href:    '/contact',
+    cta:  'Discuss Your Project',
+    href: '/contact',
   },
 ]
 
 const TRUST = [
-  'Scoped before we start',
-  'No hourly billing surprises',
-  'Milestone payment schedule',
+  '100% fixed pricing — no hidden charges',
+  'On-time delivery guaranteed',
+  'EMI options available',
+  'GST invoice provided',
+]
+
+const STATS = [
+  { value: '50+', label: 'Projects Delivered' },
+  { value: '98%', label: 'Client Satisfaction' },
+  { value: '7 Days', label: 'Fastest Delivery' },
+  { value: '24/7', label: 'WhatsApp Support' },
 ]
 
 
@@ -174,7 +201,7 @@ export default function PricingTeaser() {
               className="font-mono text-[10px] tracking-[0.18em] uppercase"
               style={{ color: 'rgba(201,168,76,0.7)' }}
             >
-              Transparent Pricing
+              Transparent Pricing · India
             </span>
             <span
               className="h-px w-8 flex-shrink-0"
@@ -186,29 +213,76 @@ export default function PricingTeaser() {
           <h2
             className="font-display font-bold mb-4"
             style={{
-              fontSize:      'clamp(32px, 4vw, 52px)',
+              fontSize:      'clamp(30px, 4vw, 52px)',
               color:         '#F8F9FC',
               lineHeight:    1.05,
               letterSpacing: '-0.03em',
             }}
           >
-            Fixed-Price Projects.{' '}
-            <span className="text-gold-gradient">No Surprises.</span>
+            Websites That Win Customers.{' '}
+            <span className="text-gold-gradient">Starting ₹15,000.</span>
           </h2>
 
           <p
-            className="font-body text-[15px] leading-relaxed max-w-xl mx-auto"
+            className="font-body text-[15px] leading-relaxed max-w-xl mx-auto mb-6"
             style={{ color: 'rgba(255,255,255,0.45)' }}
           >
-            Every project is scoped and quoted upfront before we start.
-            You know the total investment, the timeline, and exactly what you get.
+            Fixed price. On-time delivery. Every rupee accounted for upfront —
+            no hidden charges, no surprises. Just results.
           </p>
+
+          {/* Urgency nudge */}
+          <div
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
+            style={{
+              background: 'rgba(201,168,76,0.08)',
+              border:     '1px solid rgba(201,168,76,0.2)',
+            }}
+          >
+            <span style={{ color: '#C9A84C' }}><Star /></span>
+            <span
+              className="font-mono text-[9.5px] tracking-[0.12em] uppercase"
+              style={{ color: 'rgba(201,168,76,0.85)' }}
+            >
+              Limited slots available this month — Book now to lock your price
+            </span>
+          </div>
+        </ScrollReveal>
+
+
+        {/* ── Stats bar ──────────────────────────────────────── */}
+        <ScrollReveal>
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-px mb-10 rounded-xl overflow-hidden"
+            style={{ border: '1px solid rgba(255,255,255,0.06)' }}
+          >
+            {STATS.map((s, i) => (
+              <div
+                key={s.label}
+                className="flex flex-col items-center justify-center py-5 px-4 text-center"
+                style={{ background: i % 2 === 0 ? 'rgba(255,255,255,0.025)' : 'rgba(255,255,255,0.015)' }}
+              >
+                <span
+                  className="font-display font-bold mb-1"
+                  style={{ fontSize: 'clamp(20px, 2.5vw, 28px)', color: '#C9A84C', letterSpacing: '-0.02em' }}
+                >
+                  {s.value}
+                </span>
+                <span
+                  className="font-mono text-[9px] tracking-[0.12em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.3)' }}
+                >
+                  {s.label}
+                </span>
+              </div>
+            ))}
+          </div>
         </ScrollReveal>
 
 
         {/* ── Trust bar ──────────────────────────────────────── */}
         <ScrollReveal>
-          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-12">
+          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 mb-12">
             {TRUST.map(item => (
               <div key={item} className="flex items-center gap-2">
                 <span style={{ color: '#1DB8A0' }}>
@@ -261,16 +335,28 @@ export default function PricingTeaser() {
                   </div>
                 )}
 
-                {/* Tier name */}
-                <p
-                  className="font-mono text-[10px] tracking-[0.18em] uppercase mb-3"
-                  style={{ color: tier.featured ? '#C9A84C' : 'rgba(255,255,255,0.3)' }}
-                >
-                  {tier.name}
-                </p>
+                {/* Tier name + highlight */}
+                <div className="flex items-center justify-between mb-3">
+                  <p
+                    className="font-mono text-[10px] tracking-[0.18em] uppercase"
+                    style={{ color: tier.featured ? '#C9A84C' : 'rgba(255,255,255,0.3)' }}
+                  >
+                    {tier.name}
+                  </p>
+                  <span
+                    className="font-mono text-[8px] tracking-wider uppercase px-2 py-0.5 rounded-full"
+                    style={{
+                      background: tier.featured ? 'rgba(201,168,76,0.12)' : 'rgba(255,255,255,0.04)',
+                      color:      tier.featured ? '#C9A84C' : 'rgba(255,255,255,0.25)',
+                      border:     tier.featured ? '1px solid rgba(201,168,76,0.2)' : '1px solid rgba(255,255,255,0.06)',
+                    }}
+                  >
+                    {tier.highlight}
+                  </span>
+                </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-2 mb-1">
+                <div className="flex items-baseline gap-1.5 mb-0.5">
                   <span
                     className="font-display font-bold leading-none"
                     style={{
@@ -280,6 +366,12 @@ export default function PricingTeaser() {
                     }}
                   >
                     {tier.price}
+                  </span>
+                  <span
+                    className="font-mono text-[10px] tracking-wider uppercase"
+                    style={{ color: 'rgba(255,255,255,0.3)' }}
+                  >
+                    {tier.suffix}
                   </span>
                 </div>
 
@@ -319,7 +411,7 @@ export default function PricingTeaser() {
                 {/* CTA button */}
                 <Link
                   href={tier.href}
-                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-body text-[11.5px] font-bold tracking-[0.08em] uppercase transition-opacity duration-200 hover:opacity-85"
+                  className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl font-body text-[11.5px] font-bold tracking-[0.08em] uppercase transition-all duration-200 hover:opacity-90 hover:-translate-y-0.5"
                   style={
                     tier.featured
                       ? {
@@ -343,16 +435,15 @@ export default function PricingTeaser() {
         </div>
 
 
-        {/* ── WaaS stripe ────────────────────────────────────── */}
+        {/* ── WaaS / Monthly stripe ───────────────────────────── */}
         <ScrollReveal>
           <div
-            className="flex flex-col sm:flex-row items-center gap-5 rounded-xl px-6 py-5 mb-10"
+            className="flex flex-col sm:flex-row items-center gap-5 rounded-xl px-6 py-5 mb-6"
             style={{
               background: 'rgba(255,255,255,0.025)',
               border:     '1px solid rgba(255,255,255,0.06)',
             }}
           >
-            {/* Icon */}
             <div
               className="flex-shrink-0 w-9 h-9 rounded-lg flex items-center justify-center"
               style={{
@@ -364,30 +455,57 @@ export default function PricingTeaser() {
               <Zap />
             </div>
 
-            {/* Text */}
             <div className="flex-1 text-center sm:text-left">
               <p className="font-body font-bold text-[14px]" style={{ color: '#F8F9FC' }}>
-                Web-as-a-Service{' '}
+                Website + Maintenance Plan{' '}
                 <span
                   className="font-mono text-[11px] tracking-wider"
                   style={{ color: '#C9A84C' }}
                 >
-                  — $0 down · $299/month
+                  — ₹0 upfront · ₹2,499/month
                 </span>
               </p>
               <p className="font-body text-[12.5px] mt-0.5" style={{ color: 'rgba(255,255,255,0.38)' }}>
-                Full build, hosting, and ongoing maintenance under one flat monthly fee. No upfront cost.
+                Full website build, hosting, SSL, updates & support — all in one affordable monthly plan. No big upfront cost.
               </p>
             </div>
 
-            {/* Link */}
             <Link
-              href="/pricing#waas"
+              href="/pricing#monthly"
               className="flex-shrink-0 flex items-center gap-1.5 font-mono text-[10px] tracking-[0.12em] uppercase transition-opacity duration-200 hover:opacity-70"
               style={{ color: '#C9A84C' }}
             >
               Learn More <ArrowRight />
             </Link>
+          </div>
+        </ScrollReveal>
+
+
+        {/* ── EMI / reassurance strip ─────────────────────────── */}
+        <ScrollReveal>
+          <div
+            className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-xl px-6 py-4 mb-10"
+            style={{
+              background: 'rgba(29,184,160,0.04)',
+              border:     '1px solid rgba(29,184,160,0.10)',
+            }}
+          >
+            {[
+              '50% on start · 50% on delivery',
+              'EMI available on ₹35K+ projects',
+              'GST invoice included',
+              'Refund policy on non-delivery',
+            ].map(item => (
+              <div key={item} className="flex items-center gap-2">
+                <span style={{ color: '#1DB8A0' }}><Check /></span>
+                <span
+                  className="font-mono text-[9.5px] tracking-[0.10em] uppercase"
+                  style={{ color: 'rgba(255,255,255,0.38)' }}
+                >
+                  {item}
+                </span>
+              </div>
+            ))}
           </div>
         </ScrollReveal>
 
@@ -398,8 +516,25 @@ export default function PricingTeaser() {
             See Full Pricing Breakdown
           </Link>
           <Link href="/contact" className="btn-primary">
-            Get a Fixed-Price Quote
+            Get a Free Quote Now
           </Link>
+          <a
+            href="https://wa.me/919000000000"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-body text-sm font-bold uppercase tracking-wider px-6 py-3.5 rounded-lg transition-all duration-300 hover:-translate-y-0.5"
+            style={{
+              background: 'rgba(37,211,102,0.10)',
+              border:     '1px solid rgba(37,211,102,0.25)',
+              color:      '#25D366',
+            }}
+          >
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.847L.057 23.487a.75.75 0 0 0 .921.921l5.64-1.478A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.73 9.73 0 0 1-4.965-1.358l-.356-.21-3.694.968.984-3.594-.231-.371A9.716 9.716 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+            </svg>
+            WhatsApp Us
+          </a>
         </ScrollReveal>
 
         {/* Fine print */}
@@ -407,7 +542,7 @@ export default function PricingTeaser() {
           className="text-center font-mono mt-5"
           style={{ fontSize: '9px', letterSpacing: '0.10em', color: 'rgba(255,255,255,0.18)', textTransform: 'uppercase' }}
         >
-          All prices in USD · GBP equivalent available · VAT not included
+          All prices in INR · GST extra as applicable · Final quote after free consultation
         </p>
 
       </div>
