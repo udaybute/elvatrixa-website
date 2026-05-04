@@ -21,7 +21,7 @@
 import type { Metadata } from 'next'
 import { buildPageMetadata, organizationSchema } from '@/lib/seo'
 
-import { ElvatrixaHero } from '@/components/ui/hero-section-nexus'
+import Hero           from '@/components/sections/Hero'
 import StatsBar      from '@/components/sections/StatsBar'
 import ServicesGrid  from '@/components/sections/ServicesGrid'
 import FeaturedWork  from '@/components/sections/FeaturedWork'
@@ -74,7 +74,7 @@ export default function HomePage() {
       />
 
       {/* 1 ── Hero */}
-      <ElvatrixaHero />
+      <Hero />
 
     
 
